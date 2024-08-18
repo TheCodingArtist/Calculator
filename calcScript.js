@@ -9,18 +9,20 @@ const clr = ()=>{
 //To calculate we can use evaluate function "eval()".
 //it is a predefined function of java script.
 const result = ()=>{
-  if(input.value){
-     try {
-          console.log('try block');
-          input.value = eval(input.value)
-        } 
-        catch {
+     try 
+     {
+           input.value = eval(input.value)
+          console.log('try block');  
+     } 
+        catch (err)
+        {
+          console.log(err);
+          console.log('catch block');
           input.value = "Syntax Error"
         }
-  }
-  else
-  {
-     input.value=""
-  }
 }
 
+//Function for deleting last added value from calculator
+const del = ()=>{
+   input.value = input.value.slice(0,-1)
+}
