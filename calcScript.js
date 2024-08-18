@@ -9,6 +9,18 @@ const clr = ()=>{
 //To calculate we can use evaluate function "eval()".
 //it is a predefined function of java script.
 const result = ()=>{
-   input.value = eval(input.value)
+  if(input.value){
+     try {
+          console.log('try block');
+          input.value = eval(input.value)
+        } 
+        catch {
+          input.value = "Syntax Error"
+        }
+  }
+  else
+  {
+     input.value=""
+  }
 }
 
